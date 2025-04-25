@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaces</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Global Dark Theme */
+        @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&family=Nunito:wght@300;400;600&display=swap');
+body {
+    font: 400 15px/1.8 "Nunito", sans-serif;
+    margin: 0;
+    background: url('images/palace.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    overflow-x: hidden;
+}
+
+
+/* Navigation Bar */
+.heritage-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background:rgba(0, 0, 0, 0.5);
+    
+}
+.heritage-navbar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.heritage-logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5a623;
+    text-decoration: none;
+}
+
+/* Navigation Links */
+.heritage-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.heritage-nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.heritage-nav-links li a:hover {
+    color: #f5a623;
+}
+
+/* Search Bar */
+.heritage-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.heritage-search-bar {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    width: 180px;
+}
+
+.heritage-search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Featured Heritage Sections */
+.madurai-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    
+    background-size: cover;
+    position: relative;
+     
+}
+
+.heritage-card {
+    background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            z-index: 1; /* Keeps images above the blur */
+            position: relative;
+            padding: 20px;
+            margin: 15px;
+            margin-top: 100px; /*To fix the image card below the header*/
+            text-align: center;
+            box-shadow: 0 0 15px rgba(234, 234, 234, 0.7), 0 0 30px rgbargba(234, 234, 234, 0.7); /* Neon glow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.heritage-card h1 {
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Vollkorn", serif;
+    color: white;
+}
+
+.heritage-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.9);
+}
+
+/* Footer */
+.heritage-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative; /*To bring the footer to bottom*/
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heritage-nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .heritage-nav-links.active {
+        display: flex;
+    }
+
+    .heritage-hamburger {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #ffffff;
+    }
+
+    .heritage-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="heritage-navbar">
+            <div class="heritage-logo">
+                <a href="#">Heritage Odyssey</a>
+            </div>
+            
+            <ul class="heritage-nav-links">
+                <li><a href="#intro-content">Home</a></li>
+                <li><a href="#madurai-container">Explore</a></li>
+                <li><a href="#heritage-footer">Contact</a></li>
+            </ul>
+
+            <!-- Search Box -->
+            <div class="heritage-search-container">
+                <input type="text" placeholder="Search..." class="heritage-search-bar">
+                <button class="heritage-search-btn">🔍</button>
+            </div>
+            <div class="heritage-hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+<!-- App Features Section -->
+ <section class="madurai-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('nayakkar')">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.ar5QQVQq5pOmxuhUXFPHiQHaE8&pid=Api&P=0&h=180" alt="Thirumalai Nayakkar Palace">
+        <h1>Thirumalai Nayakkar Palace</h1>
+    </div>
+</section>   
+    
+
+    <!-- Footer Section -->
+    <footer class="heritage-footer">
+        <p>&copy; 2025 Heritage Explorer | All Rights Reserved</p>
+    </footer>
+    <script>
+    // Toggle Menu for Mobile View
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+    
+    // Search Box Functionality
+    document.querySelector('.search-icon').addEventListener('click', function() {
+        let searchQuery = document.querySelector('#searchInput').value;
+        alert("Searching for: " + searchQuery);
+    });
+    
+    
+    function startVoiceSearch() {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "en-US";
+        recognition.start();
+    
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.querySelector(".heritage-search-bar").value = transcript;
+        };
+    
+        recognition.onerror = function(event) {
+            console.error("Voice recognition error:", event.error);
+        };
+    
+    }
+    
+    function openDetailPage(site) {
+        window.location.href = site + ".html";
+    }
+    
+    function openFullView(src) {
+        document.getElementById('fullImage').src = src;
+        document.getElementById('fullView').style.display = 'flex';
+    }
+    function closeFullView() {
+        document.getElementById('fullView').style.display = 'none';
+    }
+</script>    
+</body>
+</html>
