@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dgl Natural Attractions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Global Dark Theme */
+        @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&family=Nunito:wght@300;400;600&display=swap');
+body {
+    font: 400 15px/1.8 "Nunito", sans-serif;
+    margin: 0;
+    background: url('images/dynamicBG/natural9.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    overflow-x: hidden;
+    text-align: center;
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Navigation Bar */
+.heritage-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 1000;
+    background:rgba(0, 0, 0, 0.5);
+}
+.heritage-navbar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.heritage-logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5a623;
+    text-decoration: none;
+}
+
+/* Navigation Links */
+.heritage-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.heritage-nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.heritage-nav-links li a:hover {
+    color: #f5a623;
+}
+
+/* Search Bar */
+.heritage-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.heritage-search-bar {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    width: 180px;
+}
+
+.heritage-search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.heading-container {
+        text-align: left;
+        padding: 50px;
+        margin-top: 10px; /* Ensures it appears below the header */
+        color: white;
+        font-size: 19px;
+        font-weight: bold;
+        position: relative;
+    }
+/* Featured Heritage Sections */
+.dindigul-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    background-size: cover;
+    position: relative;
+}
+
+.heritage-card {
+    background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            z-index: 1; /* Keeps images above the blur */
+            position: relative;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(234, 234, 234, 0.7), 0 0 30px rgbargba(234, 234, 234, 0.7); /* Neon glow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.heritage-card h1 {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    font-family: "Vollkorn", serif;
+}
+
+.heritage-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.9);
+}
+
+/* Footer */
+.heritage-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative; /*To bring the footer to bottom*/
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heritage-nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .heritage-nav-links.active {
+        display: flex;
+    }
+
+    .heritage-hamburger {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #ffffff;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="heritage-navbar">
+            <div class="heritage-logo">
+                <a href="#">Heritage Odyssey</a>
+            </div>
+            
+            <ul class="heritage-nav-links">
+                <li><a href="#intro-content">Home</a></li>
+                <li><a href="#temple-highlights">Explore</a></li>
+                <li><a href="#heritage-footer">Contact</a></li>
+            </ul>
+
+            <!-- Search Box -->
+            <div class="heritage-search-container">
+                <input type="text" placeholder="Search..." class="heritage-search-bar">
+                <button class="heritage-search-btn">🔍</button>
+            </div>
+            <div class="heritage-hamburger" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+    <section class="heading-container">
+        <h1 class="section-heading">Parks</h1>
+    </section>
+    <!-- App Features Section -->
+     <!-- Parks-->
+     <section class="dindigul-container">
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('bryantpark')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8QyM9GtuUyGijOVoVY1fKKcEYDmfk7Niwrg&s" alt="Bryant Park">
+            <h1>Bryant Park</h1>
+        </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('coakerswalk')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScDv6iJIXDKa13Q3e1DbPbIT0OVNbx9dGTUg&s" alt="Coaker's Walk">
+            <h1>Coaker's Walk</h1>
+            </div>
+            <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('chettiarpark')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRBQNhMhVvqNecRny14QS8vXgfZPXJ6T15Gg&s" alt="Chettiar Park">
+                <h1>Chettiar Park</h1>
+            </div>
+        </div>
+    </section>
+
+<!-- Lakes-->
+<section class="heading-container">
+    <h1 class="section-heading">Lakes</h1>
+</section>
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('kodaikanallake')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9oqXoUJ2-hA93w2knGWg4bqpEiqbTOca6w&s" alt="Kodaikanal Lake">
+        <h1>Kodaikanal Lake</h1>
+        </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('mannavanurlake')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSccV0if4cb8VWqueZ3v-FXbfkKJf8QDrexcQ&s" alt="Mannavanur Lake">
+            <h1>Mannavanur Lake (Kodaikanal)</h1>
+        </div>
+    </div>
+</section>
+
+<!-- Cave-->
+<section class="heading-container">
+    <h1 class="section-heading">Cave</h1>
+</section>  
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('gunacave')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ276nvVFcMZJqbLYBKdMNDEZC_jx1Nc3yVQ&s" alt="Guna Caves (Devil’s Kitchen)">
+        <h1>Guna Caves (Devil’s Kitchen)</h1>
+    </div>
+</div>
+</section>
+
+<!--Falls-->
+<section class="heading-container">
+    <h1 class="section-heading">Falls</h1>
+</section>  
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('silvercascadefalls')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVsYYQ2G5O3pUSg0l7RLEwY2kFAfXKRc1VkQ&s" alt="Silver Cascade Falls">
+        <h1>Silver Cascade Falls (Kodaikanal)</h1>
+    </div>
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('vattakanal')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlYJirOWM2c5Rx4RaOmUySpnvdogDdhbzkPw&s" alt="Vattakanal Falls">
+        <h1>Vattakanal Falls (Kodaikanal)</h1>
+    </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('vellimalaifalls')">
+            <img src="https://www.trodly.com/pictures/attraction/x61.jpg.pagespeed.ic.zBSzYVQmvj.jpg" alt="Vellimalai Falls">
+            <h1>Vellimalai Falls (Dindigul)</h1>
+        </div>
+    </div>
+</section> 
+
+<!--Dam-->
+<section class="heading-container">
+    <h1 class="section-heading">Dam</h1>
+</section>  
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('maavurdam')">
+        <img src="data:image/jpeg;base64,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" alt="Maavur Lake Dam">
+        <h1>Maavur Lake Dam</h1>
+    </div>
+</div>
+</section>  
+
+<!--Hills-->
+<section class="heading-container">
+    <h1 class="section-heading">Hills</h1>
+</section>  
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('kodaihill')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONJMjSZWyKj8fR1N0RiFCtUlb3fIHbWx4Dg&s" alt="Kodaikanal">
+        <h1>Kodaikanal</h1>
+    </div>
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('sirumalaihill')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNT_K1-c2qBAwd1xt03X2eSrQO7ynLaySEtw&s" alt="Sirumalai Hill Station">
+        <h1>Sirumalai</h1>
+    </div>
+    </div>
+</section>   
+
+<!--Viewpoints-->
+<section class="heading-container">
+    <h1 class="section-heading">Viewpoints</h1>
+</section>  
+<section class="dindigul-container">
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('suicidepoint')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzMmiseV50ffrnGTrTXiKustJ1aAGDtEaOsA&s" alt="(Suicide Point)">
+        <h1>Green Valley View (Suicide Point)</h1>
+    </div>
+    <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('pillarrocks')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQnn6luwJF0uamUMTui6uZ9nIdqol09gwD_Q&s" alt="Pillar Rocks">
+        <h1>Pillar Rocks</h1>
+        </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('dolphinnose')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyfYX7ICd3eUrk1ZbfRpm3hOOjOC76FpFItQ&s" alt="Dolphin's Nose">
+            <h1>Dolphin's Nose</h1>
+        </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('telescopehouse')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8-SO5ZH0yE-AAQj5LjYNWPKWFiHblr1Mnlg&s" alt="Telescope House">
+            <h1>Telescope House</h1>
+        </div>
+        <div class="heritage-card" onmouseover="showInfo(this)" onmouseout="hideInfo(this)" onclick="openDetailPage('moirpoint')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJTTdNodU53pbaUeqOM2XIZgbBeQwAorKCMA&s" alt="Moir Point">
+            <h1>Moir Point</h1>
+        </div>
+    </div>
+</section>   
+
+
+    <!-- Footer Section -->
+    <footer class="heritage-footer">
+        <p>&copy; 2025 Heritage Explorer | All Rights Reserved</p>
+    </footer>
+    <script>
+    // Toggle Menu for Mobile View
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+    
+    // Search Box Functionality
+    document.querySelector('.search-icon').addEventListener('click', function() {
+        let searchQuery = document.querySelector('#searchInput').value;
+        alert("Searching for: " + searchQuery);
+    });
+    
+    
+    function startVoiceSearch() {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "en-US";
+        recognition.start();
+    
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.querySelector(".heritage-search-bar").value = transcript;
+        };
+    
+        recognition.onerror = function(event) {
+            console.error("Voice recognition error:", event.error);
+        };
+    
+    }
+    
+    function openDetailPage(site) {
+        window.location.href = site + ".html";
+    }
+    
+    function openFullView(src) {
+        document.getElementById('fullImage').src = src;
+        document.getElementById('fullView').style.display = 'flex';
+    }
+    function closeFullView() {
+        document.getElementById('fullView').style.display = 'none';
+    }
+</script>    
+</body>
+</html>
